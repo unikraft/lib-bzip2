@@ -1,0 +1,9 @@
+config LIBBZIP2
+	bool "bzip2 - File compression library"
+	default n
+	select LIBNOLIBC if !HAVE_LIBC
+	select LIBUKDEBUG
+	select LIBUKALLOC
+
+if LIBBZIP2
+endif
