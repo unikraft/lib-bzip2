@@ -65,6 +65,11 @@ LIBBZIP2_CXXINCLUDES += -I$(LIBBZIP2_EXTRACTED)
 ################################################################################
 # Global flags
 ################################################################################
+# Suppressed flags
+LIBBZIP2_SUPPRESS_FLAGS += -Wno-unused-parameter -Wno-implicit-fallthrough
+LIBBZIP2_CFLAGS-y   += $(LIBBZIP2_SUPPRESS_FLAGS)
+LIBBZIP2_CXXFLAGS-y += $(LIBBZIP2_SUPPRESS_FLAGS)
+
 # Preprocessing symbols
 LIBBZIP2_DEFINES    += -D_FILE_OFFSET_BITS=64
 LIBBZIP2_CFLAGS-y   += $(LIBBZIP2_DEFINES)
